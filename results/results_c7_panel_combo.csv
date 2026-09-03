@@ -1,0 +1,22 @@
+cohort,layer,features,auc,sd,n,n_folds
+Xiao,① 单物种,Gardnerella,0.6093,0.141,54,100
+Xiao,① 单物种,Atopobium,0.4644,0.1258,54,100
+Xiao,① 单物种,Megasphaera,0.5846,0.1175,54,100
+Xiao,① 单物种,Lactobacillus,0.6685,0.1573,54,100
+Xiao,② 组合4,Gardnerella+Atopobium+Megasphaera+Lactobacillus,0.6454,0.1595,54,100
+Xiao,② 组合5(+Prev),4+Prevotella,0.6157,0.1555,54,100
+Xiao,③ 全集,65属,0.5241,0.1411,54,100
+Plummer,① 单物种,Gardnerella,0.5,0.0,43,80
+Plummer,① 单物种,Atopobium,0.5,0.0,43,80
+Plummer,① 单物种,Megasphaera,0.5,0.0,43,80
+Plummer,① 单物种,Lactobacillus,0.5,0.0,43,80
+Plummer,② 组合4,Gardnerella+Atopobium+Megasphaera+Lactobacillus,0.5,0.0,43,80
+Plummer,② 组合5(+Prev),4+Prevotella,0.5,0.0,43,80
+Plummer,③ 全集,65属,0.5,0.0,43,80
+Gustin,① 单物种,Gardnerella,0.4708,0.1065,33,100
+Gustin,① 单物种,Atopobium,0.4705,0.095,33,100
+Gustin,① 单物种,Megasphaera,0.4552,0.1369,33,100
+Gustin,① 单物种,Lactobacillus,0.5213,0.1534,33,100
+Gustin,② 组合4,Gardnerella+Atopobium+Megasphaera+Lactobacillus,0.447,0.1371,33,100
+Gustin,② 组合5(+Prev),4+Prevotella,0.4593,0.0934,33,100
+Gustin,③ 全集,65属,0.4247,0.1831,33,100

@@ -1,0 +1,9 @@
+item,value,note
+spearman_rich_outcome,-0.4537,p=0.0080; 非抽平 species_observed，主分析同源
+spearman_depth_richness,0.3361,p=0.0559
+spearman_depth_outcome,-0.3173,p=0.0720
+partial_spearman_rich_outcome_ctrl_logdepth,-0.3886,p=0.0254
+logit_rich_coef,-0.2967,p=0.0404; 调整 log depth
+logit_logdepth_coef,-0.4279,p=0.3276; 调整 richness
+spearman_rich_outcome_depth_hi_median,-0.0158,"n=17, p=0.9520"
+spearman_rich_outcome_depth_lo_median,-0.7745,"n=16, p=0.0004"

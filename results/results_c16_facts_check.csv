@@ -1,0 +1,11 @@
+item,value,note
+G11_spearman_rho,-0.4977,p=0.0032; 50%口径(>log1p(0.5))旧值 -0.498
+G11_spearman_rho_main,-0.4537,"p=0.0080; 主口径 LB>=64.87%, 框架主值 -0.454/0.008"
+G11_mannwhitney_p,0.0052,50%口径; 旧报告 0.005
+G11_empirical_auc_50pct,0.7976,"LB>50%口径, 全样本"
+G11_empirical_auc_main,0.7769,"主口径 LB>=64.87%, 全样本"
+G11_cv_auc_family_richness_50pct,0.7858,sd=0.160; 框架旧值 0.786±0.160 出处
+G11_cv_auc_family_richness_main,0.7755,"sd=0.164; 主口径替换值, 框架应改用"
+G2_median_richness,22.0,"切点规则=中位数, 非数据驱动"
+G2_fisher_p_main,0.2818,"主口径 2x2=[4,13],[7,9]; 定向 p=0.1947"
+G2_fisher_p_50pct,0.1571,"50%口径 2x2=[4,13],[8,8]; 定向 p=0.1115"

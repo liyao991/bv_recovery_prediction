@@ -1,0 +1,29 @@
+item,value,expect,note
+n_Xiao,68 (康复39/CST4 54),68/39/54,溯源
+n_Plummer,49 (康复44/CST4 43),49/44/43,溯源
+n_Mollin,33 (康复15/CST4 30),33/15/30,溯源
+n_Gustin,33 (康复11/基线CST4 33),33/11/33,溯源
+"rho(richness, outcome)",-0.4537 (p=0.0080),-0.454 / p=0.008,scipy 直算
+perm_p (10000x),0.0069,~0.005-0.008,置换分布独立验证 p
+empirical AUC (single feature),0.7769,0.777,方向=richness 预测未康复
+CV AUC species_observed 单指标,0.7755 ± 0.1641,≈0.776,
+CV AUC family:richness (种级),0.7755 ± 0.1641,0.776±0.164,
+alpha矩阵 asv richness,0.7270 ± 0.2102,0.727±0.210,
+alpha矩阵 genus richness,0.6812 ± 0.2188,0.681±0.219,
+alpha矩阵 species richness,0.7755 ± 0.1641,0.776±0.164,
+A1 Xiao internal CV (full),0.6291 ± 0.1626,0.626±0.163,
+A2 Xiao->Mollin external,"0.5257 ± 0.0126 CI[0.334,0.708]","0.521 CI[0.339,0.702]",seed-mean
+A3 Xiao->Gustin external,"0.5562 ± 0.0215 CI[0.351,0.755]","0.556 CI[0.341,0.757]",seed-mean
+A4 Gustin internal CV,0.4380 ± 0.1707,0.436,
+B1 Xiao CST4 internal CV,0.5381 ± 0.1284,0.535±0.127,
+B2 Xiao->Mollin CST4,"0.4984 ± 0.0203 CI[0.290,0.714]","0.501 CI[0.299,0.714]",seed-mean
+B3 Xiao->Gustin CST4,"0.5124 ± 0.0000 CI[0.301,0.730]","0.512 CI[0.296,0.729]",seed-mean
+Xiao full holdout 200x,"0.6481 CI[0.495,0.787] P(>0.5)=0.970","0.652 [0.500,0.797]",
+Xiao CST4 holdout 200x,"0.5970 CI[0.397,0.818] P(>0.5)=0.835","0.596 [0.388,0.802]",
+G2 中位数切点,22.0,22,
+G2 康复率 hi vs lo,23.5% vs 43.8%,24% vs 44%,"2x2=[[4, 13], [7, 9]]"
+G2 Fisher 双侧 p,0.2818 (定向 0.1947),0.282,
+"partial rho(rich, outcome | baseLB)",-0.4311 (p=0.0138),-0.431 / p=0.014,
+logistic richness coef,-1.181,(负号),对照
+"rarefy rho (多项近似, 原协议)",-0.3848 (p=0.0270),-0.392 / p=0.024,
+"rarefy rho (超几何, 真无放回)",-0.3781 (p=0.0301),对照,另一条路

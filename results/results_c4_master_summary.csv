@@ -1,0 +1,20 @@
+﻿section,analysis,auc_mean,auc_sd,n,note
+四队列矩阵,A1 Xiao 队列内CV(全),0.6256,0.1633,68,锚点0.65
+四队列矩阵,A2 Xiao→Mollin(全),0.5278,0.0101,20,锚点0.609
+四队列矩阵,A3 Xiao→Gustin(全),0.5564,0.0206,20,第3验证
+四队列矩阵,A4 Gustin 队列内CV(全),0.4355,0.1716,33,全CST4
+四队列矩阵,B1 Xiao CST4 队列内,0.5353,0.1267,54,锚点0.596
+四队列矩阵,B2 Xiao→Mollin CST4,0.5049,0.0204,20,锚点0.527
+四队列矩阵,B3 Xiao→Gustin CST4,0.5124,0.0,20,第3复现
+四队列矩阵,B4 Gustin CST4,0.437,0.1718,33,=A4
+四队列矩阵,C1 Gustin α-only,0.6885,0.201,33,richness信号
+richness,Xiao · 全人群 ρ_raw,-0.054,,68,p=0.662
+richness,Xiao · 全人群 ρ_rarefy,-0.033,,68,p=0.787 depth=4254
+richness,Xiao · 基线CST4 ρ_raw,0.045,,54,p=0.745
+richness,Xiao · 基线CST4 ρ_rarefy,0.109,,54,p=0.431 depth=4254
+richness,Plummer · 全人群 ρ_raw,0.1,,49,p=0.492
+richness,Plummer · 全人群 ρ_rarefy,0.095,,49,p=0.515 depth=1341
+richness,Plummer · 基线CST4 ρ_raw,0.071,,43,p=0.65
+richness,Plummer · 基线CST4 ρ_rarefy,0.09,,43,p=0.565 depth=1341
+richness,Gustin · 全CST4 ρ_raw,-0.454,,33,p=0.008
+richness,Gustin · 全CST4 ρ_rarefy,-0.3916,,33,p=0.024 depth=1014

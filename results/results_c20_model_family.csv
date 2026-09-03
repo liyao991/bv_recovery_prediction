@@ -1,0 +1,19 @@
+cell,family,auc,sd
+A1 Xiao internal CV (full),enet,0.6361,0.1454
+A2 Xiao->Mollin external,enet,0.6072,0.0228
+A3 Xiao->Gustin external,enet,0.5936,0.0293
+B1 Xiao CST4 internal CV,enet,0.5475,0.1418
+B2 Xiao->Mollin CST4,enet,0.5147,0.0104
+B3 Xiao->Gustin CST4,enet,0.5143,0.0081
+A1 Xiao internal CV (full),ridge,0.6274,0.1666
+A2 Xiao->Mollin external,ridge,0.5446,0.0077
+A3 Xiao->Gustin external,ridge,0.5576,0.0161
+B1 Xiao CST4 internal CV,ridge,0.5889,0.1607
+B2 Xiao->Mollin CST4,ridge,0.5438,0.0041
+B3 Xiao->Gustin CST4,ridge,0.5295,0.0182
+A1 Xiao internal CV (full),L1,0.6242,0.1637
+A2 Xiao->Mollin external,L1,0.5259,0.0104
+A3 Xiao->Gustin external,L1,0.5564,0.0206
+B1 Xiao CST4 internal CV,L1,0.5353,0.128
+B2 Xiao->Mollin CST4,L1,0.504,0.0211
+B3 Xiao->Gustin CST4,L1,0.5124,0.0

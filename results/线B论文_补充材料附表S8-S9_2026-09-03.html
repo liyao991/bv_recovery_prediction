@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+
+<style>
+body { font-family: 'Microsoft YaHei', 'SimSun', sans-serif; font-size: 11pt; color: #1a1a1a; line-height: 1.6; }
+h1 { font-size: 18pt; color: #1f3864; border-bottom: 2px solid #1f3864; padding-bottom: 6px; }
+h2 { font-size: 15pt; color: #1f3864; border-bottom: 1px solid #b0b7c3; padding-bottom: 4px; margin-top: 18px; }
+h3 { font-size: 13pt; color: #2e5395; margin-top: 14px; }
+h4 { font-size: 12pt; color: #333; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 10pt; }
+th, td { border: 1px solid #999; padding: 5px 8px; text-align: left; vertical-align: top; }
+th { background-color: #dce6f1; font-weight: bold; }
+blockquote { border-left: 4px solid #2e5395; padding: 6px 12px; margin: 10px 0; background-color: #f2f6fb; color: #333; }
+blockquote blockquote { background-color: #fbf3e0; border-left-color: #c08a00; }
+code { background-color: #f0f0f0; padding: 1px 4px; font-family: Consolas, monospace; font-size: 9.5pt; }
+pre { background-color: #f5f5f5; padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+strong { color: #000; }
+img { max-width: 100%; display: block; margin: 12px auto; }
+p img { margin: 12px auto; }
+</style>
+
+</head>
+<body>
+<h1>补充材料附表 S8–S9：模型族 × 特征变换敏感性 + 特征选择频率</h1>
+<blockquote>
+<p>数据源：<code>results_c20_model_family.csv</code>、<code>results_c20_clr.csv</code>、<code>results_c20_clr_pseudo.csv</code>、<code>results_c20_feat_freq.csv</code>（台式机 #C20 回传，2026-09-03，逐位核对）。
+口径：沿用主矩阵协议（83 属交集 / 20 随机种子 / seed-mean AUC / 嵌套 CV 无泄漏 / class_weight='balanced'）。</p>
+</blockquote>
+<hr>
+<h2>附表 S8：模型族 × 特征变换敏感性（CST4 亚组与全人群代表 cell，20 种子 seed-mean AUC）</h2>
+<table>
+<thead>
+<tr>
+<th>分析（cell）</th>
+<th>LASSO(L1)+log1p（主协议）</th>
+<th>elastic-net(α=0.5)</th>
+<th>ridge(L2)</th>
+<th>LASSO(L1)+CLR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Xiao 全人群，内部 CV</td>
+<td>0.624 ± 0.164</td>
+<td>0.636 ± 0.145</td>
+<td>0.627 ± 0.167</td>
+<td>0.523 ± 0.118</td>
+</tr>
+<tr>
+<td>Xiao→Mollin，全人群外推</td>
+<td>0.526</td>
+<td>0.607</td>
+<td>0.545</td>
+<td>0.591</td>
+</tr>
+<tr>
+<td>Xiao→Gustin，全人群外推</td>
+<td>0.556</td>
+<td>0.594</td>
+<td>0.558</td>
+<td>0.601</td>
+</tr>
+<tr>
+<td>Xiao CST4，内部 CV</td>
+<td>0.535 ± 0.128</td>
+<td>0.547 ± 0.142</td>
+<td>0.589 ± 0.161</td>
+<td>0.494 ± 0.138</td>
+</tr>
+<tr>
+<td>Xiao→Mollin CST4 外推</td>
+<td>0.504</td>
+<td>0.515</td>
+<td>0.544</td>
+<td>0.512</td>
+</tr>
+<tr>
+<td>Xiao→Gustin CST4 外推</td>
+<td>0.512</td>
+<td>0.514</td>
+<td>0.530</td>
+<td>0.472</td>
+</tr>
+</tbody>
+</table>
+<p><strong>附注</strong>：CLR = 中心对数比变换（伪计数 1e-4）；CLR 结论在 1e-2 至 1e-6 四档伪计数下一致（CST4 亚组全部 ≤0.53，见下表）。elastic-net 使用 saga 求解器，其余同主协议（λ 嵌套 5 折 CV、class_weight='balanced'）。</p>
+<p><strong>结论句</strong>：将 L1 换为 elastic-net 或 ridge、或以 CLR 替代 log1p 后，CST4 亚组 AUC 0.47–0.59 保持 ≈ 随机，全人群 0.52–0.64 无任一族 &gt;0.65——阴性结论不依赖正则化族或组成性数据处理方式。</p>
+<h3>S8 补充：CLR 伪计数稳健性（四档，L1 主协议）</h3>
+<table>
+<thead>
+<tr>
+<th>伪计数</th>
+<th>A1（Xiao 全人群内部）</th>
+<th>B1（Xiao CST4 内部）</th>
+<th>B2（Xiao→Mollin CST4）</th>
+<th>B3（Xiao→Gustin CST4）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1e-2</td>
+<td>0.581</td>
+<td>0.512</td>
+<td>0.275</td>
+<td>0.529</td>
+</tr>
+<tr>
+<td>1e-3</td>
+<td>0.543</td>
+<td>0.493</td>
+<td>0.435</td>
+<td>0.475</td>
+</tr>
+<tr>
+<td>1e-4</td>
+<td>0.521</td>
+<td>0.497</td>
+<td>0.513</td>
+<td>0.472</td>
+</tr>
+<tr>
+<td>1e-6</td>
+<td>0.504</td>
+<td>0.483</td>
+<td>0.517</td>
+<td>0.504</td>
+</tr>
+</tbody>
+</table>
+<p><strong>解读</strong>：B 系四档全部 ≤0.53、无一档达到可用预测力——CLR 无预测力结论不依赖伪计数选择。A1 随伪计数减小单调下降（0.581→0.504），B2 在 1e-2 档大幅反转至 0.275（大伪计数压缩稀有属）——A1/B2 的档间波动本身是「构成层信号对分析选择敏感」的又一佐证。</p>
+<hr>
+<h2>附表 S9：LASSO 特征选择频率表（20 随机种子）</h2>
+<table>
+<thead>
+<tr>
+<th>训练集</th>
+<th>每种子非零属数（min/median/max）</th>
+<th>高频特征（出现 ≥19/20 者）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Xiao 全人群（A 系）</td>
+<td>1 / 26 / 30</td>
+<td>Lactobacillus 20/20；Acidovorax、Arcanobacterium、Atopobium、Corynebacterium、Dialister、Escherichia-Shigella、Eubacterium、Fastidiosipila、Gallicola、Gardnerella、Gemella、Lachnospiraceae、Ligilactobacillus、Megasphaera 各 19/20</td>
+</tr>
+<tr>
+<td>Xiao CST4（B 系）</td>
+<td>26 / 28 / 28</td>
+<td>Acidovorax、Aerococcus、Arcanobacterium、Atopobium、Corynebacterium、Dialister、Escherichia-Shigella、Eubacterium、Fastidiosipila、Gallicola、Gardnerella、Gemella、Lachnospiraceae、Lactobacillus、Ligilactobacillus 各 20/20</td>
+</tr>
+</tbody>
+</table>
+<p><strong>解读</strong>：LASSO 在 20 种子间特征集确有波动（full 训练时非零属 1–30 跨度大，个别种子 C=0.01 收缩到 1 个属），但多数种子选 C=1.0（弱正则）保留 26–28/83 属，模型并非稀疏标志物选择器；高频属为经典阴道菌属（Lactobacillus/Gardnerella/Atopobium/Megasphaera 等），无异常。本文结论只读 AUC、不做特征级解读。</p>
+</body>
+</html>

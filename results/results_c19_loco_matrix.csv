@@ -1,0 +1,13 @@
+analysis,train_scope,n_train,n_test,auc,auc_sd,ci_lo,ci_hi
+A: Xiao->Mollin (full),full,68,33,0.5206,0.0155,0.337,0.692
+A: Xiao->Gustin (full),full,68,33,0.5564,0.0206,0.344,0.755
+B: Xiao->Mollin (cst4),cst4,54,30,0.5011,0.0256,0.3,0.707
+B: Xiao->Gustin (cst4),cst4,54,33,0.5124,0.0,0.295,0.723
+A: Mollin->Xiao (full),full,33,68,0.4331,0.0073,0.296,0.572
+A: Mollin->Gustin (full),full,33,33,0.4944,0.0059,0.278,0.715
+B: Mollin->Xiao (cst4),cst4,30,54,0.4788,0.0158,0.321,0.634
+B: Mollin->Gustin (cst4),cst4,30,33,0.4395,0.011,0.221,0.663
+A: Gustin->Xiao (full),full,33,68,0.524,0.0415,0.485,0.563
+A: Gustin->Mollin (full),full,33,33,0.4898,0.016,0.434,0.544
+B: Gustin->Xiao (cst4),cst4,33,54,0.4942,0.0182,0.449,0.54
+B: Gustin->Mollin (cst4),cst4,33,30,0.494,0.0123,0.436,0.551

@@ -1,0 +1,8 @@
+analysis,auc,ci_lo,ci_hi,n,note
+C6-2a naive pooled (richness->outcome),0.6197,0.5182,0.7245,130,spearman rho=-0.204 p=0.020
+C6-2b cohort×richness interaction (LR test),,,,130,LR=9.387 df=2 p=0.009156
+C6-2b cohort slope (Xiao),,,,54,logit coef=+0.0285
+C6-2b cohort slope (Plummer),,,,43,logit coef=+0.1347
+C6-2b cohort slope (Gustin),,,,33,logit coef=-0.0817
+C6-2a4 naive pooled 4-cohort (common-genus richness),0.5911,0.5107,0.6826,160,spearman rho=-0.157 p=0.048
+C6-2b4 cohort×richness interaction 4-cohort (LR test),,,,160,LR=9.480 df=3 p=0.02354 ref=Gustin

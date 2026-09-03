@@ -1,0 +1,16 @@
+﻿metric,level,value,value_std,n,caliber,source_analysis
+Xiao_full_internal_cv,full_population,0.626,0.163,68,matrix_protocol,A1
+Xiao_to_Mollin_external,full_population,0.528,0.010,20,matrix_protocol,A2
+Xiao_to_Gustin_external,full_population,0.556,0.021,20,matrix_protocol,A3
+Gustin_internal_cv,full_population,0.436,0.172,33,matrix_protocol,A4(=all_CST4)
+Mollin_internal_cv,full_population,0.766,0.211,33,matrix_protocol,A5_small_n
+Xiao_CST4_internal_cv,baseline_CST4,0.535,0.127,54,matrix_protocol,B1
+Xiao_to_Mollin_CST4_external,baseline_CST4,0.505,0.020,20,matrix_protocol,B2
+Xiao_to_Gustin_CST4_external,baseline_CST4,0.512,0.000,20,matrix_protocol,B3
+Gustin_CST4_internal,baseline_CST4,0.437,0.172,33,matrix_protocol,B4(=all_pop)
+Mollin_CST4_internal,baseline_CST4,0.649,0.207,30,matrix_protocol,B5_small_n
+Gustin_alpha_only_internal,richness_control,0.689,0.201,33,matrix_protocol,C1
+Xiao_full_holdout,full_population,0.652,"[0.500,0.797]",68,early_anchor_holdout,diag_cst4_evidence_all
+Xiao_CST4_holdout,baseline_CST4,0.596,"[0.388,0.802]",54,early_anchor_holdout,diag_cst4_evidence_base_cst4
+Xiao_full_drop_LB,full_population,0.652_to_0.567,,68,early_anchor_holdout,label_coupling_evidence
+Xiao_CST4_drop_LB,baseline_CST4,0.596_to_0.584,,54,early_anchor_holdout,negative_result_clean

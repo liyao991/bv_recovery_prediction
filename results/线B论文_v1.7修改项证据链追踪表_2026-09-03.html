@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+
+<style>
+body { font-family: 'Microsoft YaHei', 'SimSun', sans-serif; font-size: 11pt; color: #1a1a1a; line-height: 1.6; }
+h1 { font-size: 18pt; color: #1f3864; border-bottom: 2px solid #1f3864; padding-bottom: 6px; }
+h2 { font-size: 15pt; color: #1f3864; border-bottom: 1px solid #b0b7c3; padding-bottom: 4px; margin-top: 18px; }
+h3 { font-size: 13pt; color: #2e5395; margin-top: 14px; }
+h4 { font-size: 12pt; color: #333; }
+table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 10pt; }
+th, td { border: 1px solid #999; padding: 5px 8px; text-align: left; vertical-align: top; }
+th { background-color: #dce6f1; font-weight: bold; }
+blockquote { border-left: 4px solid #2e5395; padding: 6px 12px; margin: 10px 0; background-color: #f2f6fb; color: #333; }
+blockquote blockquote { background-color: #fbf3e0; border-left-color: #c08a00; }
+code { background-color: #f0f0f0; padding: 1px 4px; font-family: Consolas, monospace; font-size: 9.5pt; }
+pre { background-color: #f5f5f5; padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16px 0; }
+strong { color: #000; }
+img { max-width: 100%; display: block; margin: 12px auto; }
+p img { margin: 12px auto; }
+</style>
+
+</head>
+<body>
+<h1>线 B 论文 v1.7 修改项证据链追踪表</h1>
+<blockquote>
+<p><strong>用途</strong>：把 v1.7 每一处修改（按千问审稿意见采纳的「真金」部分）对应到「依据的原始数据/脚本 + 核实状态」，落实「一切验证回到原数据」的铁律。
+<strong>状态三档</strong>：✅ 已核（回了原数据）｜➖ 无数据可回（纯措辞/声明/逻辑修正，天然无数据）｜⏳ 待 #C20（声明已写、实证挂派单待台式机）。</p>
+</blockquote>
+<hr>
+<h2>一、状态汇总</h2>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>条数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 已核</td>
+<td>5</td>
+<td>数字/阈值类，已回原始 CSV/脚本核实</td>
+</tr>
+<tr>
+<td>➖ 无数据可回</td>
+<td>7</td>
+<td>措辞严谨化、规则声明、逻辑一致性、诚实披露</td>
+</tr>
+<tr>
+<td>⏳ 待 #C20</td>
+<td>3</td>
+<td>声明已写进论文，但代码核实/数据验证仍在进行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心结论</strong>：v1.7 里「数字类」修改全部回了原数据；「措辞/声明类」天然无数据可回；但有 <strong>3 处是「论文里已写了判断句、实证还没落地」</strong>，其中 λ 嵌套是「已写肯定句、尚未被代码证实」，最需盯。</p>
+<hr>
+<h2>二、主表（按论文章节顺序）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>修改项（论文位置）</th>
+<th>千问意见</th>
+<th>依据的原始数据 / 脚本</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>richness 标「名义显著 / 提示性、未确证」（摘要 + 5 结论）</td>
+<td>6d</td>
+<td><code>results_c9_final_metrics.csv</code>（0.776 单特征 vs 0.689 α混合）+ <code>results_c16_facts_check.csv</code> / <code>results_c17_recheck.csv</code>（0.776 独立复现）+ <code>power_analysis.R</code>（0.778 MDE）</td>
+<td>✅ 已核</td>
+</tr>
+<tr>
+<td>2</td>
+<td>「剂量-反应增量」→「单调负相关」（摘要 + 5 结论）</td>
+<td>7</td>
+<td>Spearman ρ 不支持因果性表述（措辞严谨化）</td>
+<td>➖ 无数据可回</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.1 建模纳入标准「结局率 10–90%」</td>
+<td>4</td>
+<td>Plummer 结局率 91% 为原文已知事实</td>
+<td>➖ 声明</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.2 说明 log1p 而非 CLR</td>
+<td>1</td>
+<td><code>results_c20_clr.csv</code> + <code>results_c20_clr_pseudo.csv</code>（CLR 敏感性，CST4 0.47–0.51 仍 ≈随机；四档伪计数一致）</td>
+<td>✅ 已核</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2.4 「λ 在每次划分内部重估、测试折不参与选择」</td>
+<td>2c</td>
+<td>四条管线脚本逐行核实（four_cohort_matrix L131-136 / c19_loco L122-126 / xiao_holdout L87-88 / train_main L85-87）</td>
+<td>✅ 已核（嵌套属实）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2.5 功效公式参数（Hanley–McNeil、双侧 α=0.05、power 0.8、三队列 n 与康复率）</td>
+<td>6a</td>
+<td><code>power_analysis.R</code></td>
+<td>✅ 已核</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2.5 置换检验 p 上限 0.001</td>
+<td>（分辨率）</td>
+<td>报告精度问题</td>
+<td>➖ 无数据可回</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2.5 主分析 vs 敏感性/探索分析区分</td>
+<td>全局</td>
+<td>透明性声明</td>
+<td>➖ 无数据可回</td>
+</tr>
+<tr>
+<td>9</td>
+<td>3.3 Plummer 按纳入标准剔除（只作边界参照）</td>
+<td>4</td>
+<td>Plummer 91% 已知事实</td>
+<td>✅ 已核</td>
+</tr>
+<tr>
+<td>10</td>
+<td>3.3 亚组「未检出大效应 ≠ 无信号」功效限定</td>
+<td>附</td>
+<td><code>power_analysis.R</code>（Xiao MDE 0.711）</td>
+<td>✅ 已核</td>
+</tr>
+<tr>
+<td>11</td>
+<td>3.5 功效分析单向化（MDE 只排除大效应、不认证阳性）</td>
+<td>6b</td>
+<td><code>power_analysis.R</code></td>
+<td>✅ 已核</td>
+</tr>
+<tr>
+<td>12</td>
+<td>3.5 Gustin 0.776 略低于 0.778 → 标提示性未确证</td>
+<td>6d</td>
+<td><code>results_c9_final_metrics.csv</code> + <code>c16/c17</code> + <code>power_analysis.R</code></td>
+<td>✅ 已核</td>
+</tr>
+<tr>
+<td>13</td>
+<td>3.5 组成性约束「机械成分」</td>
+<td>7</td>
+<td>理论判断（加和=1），量化待 CLR 敏感性（#C20 任务二·2）</td>
+<td>⏳ 待 #C20</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3.5 「剂量-反应」→「单调负相关」</td>
+<td>7</td>
+<td>纯措辞</td>
+<td>➖ 无数据可回</td>
+</tr>
+<tr>
+<td>15</td>
+<td>4.3 删「真无信号」</td>
+<td>6b</td>
+<td>逻辑一致性</td>
+<td>➖ 无数据可回</td>
+</tr>
+<tr>
+<td>16</td>
+<td>4.4 剂量-反应→单调负相关 + 组成性提示</td>
+<td>7</td>
+<td>措辞 + 量化待 CLR</td>
+<td>➖/⏳</td>
+</tr>
+<tr>
+<td>17</td>
+<td>4.5 局限扩到 8 条（组成性 / 功效公式保守 / log1p 非 CLR / 未预先注册）</td>
+<td>1/6a/7/全局</td>
+<td>声明为主，其中组成性、CLR 指向 #C20</td>
+<td>➖/⏳</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>三、原「待 #C20 三项」——已闭环（#C20 回执 2026-09-03）</h2>
+<table>
+<thead>
+<tr>
+<th>核实项</th>
+<th>结论</th>
+<th>落地位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>λ 嵌套重估</strong>（#5，必做）</td>
+<td>✅ 嵌套属实、无需重跑——四条管线（主矩阵/LOCO/holdout/train_main）λ 均在 <code>GridSearchCV.fit(训练侧)</code> 内 5 折重估，测试侧任何环节不参与</td>
+<td>论文 2.4 加「四条管线结构一致」+ 代码指引</td>
+</tr>
+<tr>
+<td><strong>CLR 敏感性</strong>（#4/#13）</td>
+<td>✅ 已跑——CLR（伪计数 1e-4）下 CST4 0.47–0.51 仍 ≈随机；四档伪计数（1e-2~1e-6）一致；A1 全人群 0.624→0.523（弱信号对变换敏感，佐证主叙事）</td>
+<td>论文 3.3 敏感性句 + 4.5 ⑦ + 附表 S8</td>
+</tr>
+<tr>
+<td><strong>组成性量化</strong>（#13）</td>
+<td>✅ 经 CLR 落实——行闭合约束下结论不变，机械成分的量化由 CLR 敏感性承载</td>
+<td>论文 4.5 + 附表 S8</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>五、#C20 新增落改（4 项可选补充，均已落地）</h2>
+<table>
+<thead>
+<tr>
+<th>补充项</th>
+<th>结论</th>
+<th>落地位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型族敏感性（elastic-net/ridge）</td>
+<td>CST4 三族 0.50–0.59 均 ≈0.5；全人群 0.53–0.64 无 &gt;0.65</td>
+<td>论文 3.3「模型族与特征变换稳健」句 + 附表 S8</td>
+</tr>
+<tr>
+<td>CLR 变换敏感性 + 伪计数稳健性</td>
+<td>见上</td>
+<td>附表 S8</td>
+</tr>
+<tr>
+<td>特征选择频率表</td>
+<td>L1 特征集跨种子确有波动（1–30 属）但不伤结论（多数种子保留 26–28 属、不做特征级解读）</td>
+<td>附表 S9</td>
+</tr>
+<tr>
+<td>非抽平 richness + 深度交互</td>
+<td>三类深度调整（rarefy/partial/logistic）信号均存活；但 richness×深度交互显著（置换 p=0.004）——「排除深度混杂」降级为「不能完全排除」</td>
+<td>论文 2.5/3.5/4.5 ⑥</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>说明：#C20 任务一（λ 嵌套）+ 任务二 4 项 + 伪计数稳健性全部收口，台式机已终验（文档数字与 CSV 逐位一致）。</p>
+</blockquote>
+<hr>
+<h2>五、使用规则</h2>
+<ol>
+<li><strong>本表是「投稿前最后一道自查」</strong>：每处修改都必须能指到一条原始 CSV/脚本。</li>
+<li><strong>#C20 已闭环</strong>（2026-09-03）：第三节三项已全部转 ✅，主表对应行已更新，⏳ 清零。</li>
+<li><strong>任何后续新改动</strong>（无论谁提的意见）：改完即在此表追加一行「修改项 → 证据 → 状态」，不允许出现「改完但无证据链」的条目。</li>
+<li><strong>铁律</strong>：状态为 ⏳ 的条目，在转 ✅ 之前，论文里对应的肯定句一律视为「待证实断言」，不得当作已核实结论对外表述。</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,7 @@
+cell,family,auc,sd
+A1 Xiao internal CV (full),L1+CLR,0.5228,0.1183
+A2 Xiao->Mollin external,L1+CLR,0.5906,0.0613
+A3 Xiao->Gustin external,L1+CLR,0.6006,0.0488
+B1 Xiao CST4 internal CV,L1+CLR,0.4945,0.1381
+B2 Xiao->Mollin CST4,L1+CLR,0.5125,0.0082
+B3 Xiao->Gustin CST4,L1+CLR,0.4723,0.0238

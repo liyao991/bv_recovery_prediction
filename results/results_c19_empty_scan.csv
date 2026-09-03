@@ -1,0 +1,13 @@
+cell,empty_seeds,auc_all,auc_nonempty,n_nonempty,mean_nz_coef
+Xiao->Mollin (full),0,0.5206,0.5206,20,24.9
+Xiao->Mollin (cst4),0,0.5004,0.5004,20,27.8
+Xiao->Gustin (full),0,0.5564,0.5564,20,24.9
+Xiao->Gustin (cst4),0,0.5124,0.5124,20,27.8
+Mollin->Xiao (full),0,0.4331,0.4331,20,16.6
+Mollin->Xiao (cst4),0,0.4771,0.4771,20,15.9
+Mollin->Gustin (full),0,0.494,0.494,20,16.4
+Mollin->Gustin (cst4),0,0.4395,0.4395,20,16.1
+Gustin->Xiao (full),14,0.524,0.58,6,3.9
+Gustin->Xiao (cst4),14,0.4942,0.4806,6,3.9
+Gustin->Mollin (full),14,0.4898,0.466,6,3.9
+Gustin->Mollin (cst4),14,0.494,0.4799,6,3.9
