@@ -1,0 +1,18 @@
+﻿Feature group (Gustin's v1→v2→v3 paired),Whole-cohort AUC ± SD,CST-IV subgroup AUC ± SD,n
+D0 only (static baseline),0.530 ± 0.226,0.528 ± 0.222,33
+D7 only (dynamic intermediate),0.483 ± 0.092,0.481 ± 0.088,33
+D0+D7 concatenated,0.586 ± 0.223,0.576 ± 0.219,33
+Δ(D7−D0) change magnitude,0.450 (lowest),—,33
+,,,
+Transient-clearance transition table (D7 → D30),n,Outcome
+D7 LB≥50% & D30 recovered,7,True transient clearance responders
+D7 LB≥50% & D30 not recovered,13,Transient clearance; eventual recurrence
+D7 LB<50% & D30 recovered,4,Late clearance (no early marker)
+D7 LB<50% & D30 not recovered,9,Persistent dysbiosis
+Total D7 LB≥50%,20,7/20 PPV = 0.350 (7/20) for D30 recovery
+,,,
+Diagnostic metric (D7→D30),Value,95% CI,Source
+Sensitivity (D7 transient clear → D30 recovery),0.636 (7/11),—,modeling_report §7.9
+Specificity (D7 LB<50% → D30 not recovered),0.409 (9/22),—,modeling_report §7.9
+Positive predictive value (PPV),0.350 (7/20),"[0.151, 0.549]",modeling_report §7.9
+Fisher OR (D7 transition → D30 recovery),1.212 (p = 1.000),—,modeling_report §7.9

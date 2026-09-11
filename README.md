@@ -14,7 +14,8 @@
 ## 目录结构
 
 - `scripts/` — 分析脚本（Python / R）：SRA 下载、DADA2 去噪、SILVA 分类、特征构建、建模与敏感性分析
-- `results/` — 关键中间结果与图表
+- `results/` — 关键中间结果与图表、补充材料（S1–S6 + FigS1–S5 + CodeS1–S2 + B7–B9 附表）
+- `SUBMISSION.md` — 投稿清单（哪些文件对应正文哪一节/哪张图/哪段统计）
 
 ## 路径占位符说明
 
@@ -31,3 +32,9 @@
 2. 运行 DADA2 流程生成 ASV 表与分类（`scripts/dada2_pipeline_template.R`）
 3. 构建属/种级相对丰度与 α 多样性特征矩阵（`scripts/export_genus_matrix.R`、`scripts/export_alpha_family.R` 等）
 4. 运行建模与敏感性分析（`scripts/train_main.py`、`scripts/four_cohort_matrix.py`、`scripts/c20_sensitivity.py` 等）
+
+## 数据与代码可用性
+
+- 所有数据来自上述公开 SRA 项目（ENA 直链可通过 `scripts/download_sra_cohorts.py` 复现下载）。
+- 代码全部以 ASCII / UTF-8 文本形式提供；CSV 复现表与图 PNG/DOCX 收录于 `results/`。
+- 仓库不包含原始 FASTQ 或大中间对象（ASV / phyloseq RData），这些可在 `<OUT_DIR>` 复现步骤 2–3 后得到。

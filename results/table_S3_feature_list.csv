@@ -1,0 +1,10 @@
+﻿Feature scope,Cohorts used,Feature count,Filter / aggregation rule,Used in
+Primary genus intersection,Xiao / Mollin / Gustin (3-cohort),83 genera,Genus-level intersection; ≥5% prevalence filter in each cohort,Main analysis (Section 2 of results)
+Secondary genus intersection,Xiao / Plummer / Gustin (3-cohort),65 genera,Genus-level intersection; ≥5% prevalence filter,Targeted prediction analysis (Section 3.4 / Supplementary Table S7)
+Gustin full genus set,Gustin only (single-cohort),179 genera,"All detected genera, no prevalence filter","Gustin within-cohort analysis (richness, D7 dynamic, continuous outcomes)"
+Species-level aggregation (Xiao),Xiao full cohort,272 species,SILVA v138.1 species-level annotation; collapsed to Genus_species; uncultured/sp./NA → Genus unclassified,Resolution contrast (Section 3.5 / Supplementary Table S4)
+Species-level aggregation (Plummer),Plummer full cohort,185 species,SILVA v138.1 species-level annotation (same rules),Resolution contrast (Section 3.5 / Supplementary Table S4)
+Species-level aggregation (Gustin),Gustin full cohort,241 species,SILVA v138.1 species-level annotation (same rules),Resolution contrast (Section 3.5 / Supplementary Table S4)
+α-diversity scalars — main feature matrix,Xiao / Plummer / Gustin (where labelled),"3 per cohort: Shannon, Chao1, n_ASV",Computed from rarefied ASV count tables (vegan::diversity); these are the α features entering X_features.csv,Main LASSO feature matrix (X_features.csv); α-vs-genus family contrast (Section 3.3)
+α-family panel — sensitivity matrix,Xiao / Plummer / Gustin,6 indicators × 3 resolutions = 18 per cohort,"observed richness, Chao1, Shannon, Simpson, inverse-Simpson, Pielou evenness — each computed at ASV / genus / species resolution","α-family × resolution matrix (Supplementary Table S6, 120 items)"
+Key bacterial targets (clinical priors),Xiao / Plummer / Gustin,7 genera + 2 species = 9 targets,"Lactobacillus, Gardnerella, Atopobium, Megasphaera, Sneathia, Mobiluncus, Prevotella (genera); Gardnerella vaginalis, Atopobium vaginae (species)",Targeted prediction (Section 3.4 / Supplementary Table S7)

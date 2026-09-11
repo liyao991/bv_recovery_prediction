@@ -1,0 +1,10 @@
+﻿Tier,Task,Cohort × subset,AUC (mean ± SD),n,95% CI,Source,Interpretation
+① Cross-sectional diagnosis,Is the patient currently BV-positive?,Xiao full cohort,0.9+ (literature consensus; not the study's primary endpoint),—,—,"PMID 21991378, 16652274","BV-associated bacteria (Gardnerella, Atopobium, Prevotella, etc.) clearly discriminate BV from healthy; the cohort literature consistently reports high AUC and is not the focus of the present study"
+② Whole-cohort recovery prediction,Will this patient recover (Lactobacillus ≥50% at follow-up)?,Xiao within-cohort CV (full),0.626 ± 0.163,68,"[0.500, 0.797]",results_c4_master_summary.csv A1,Within-cohort moderate signal
+② Whole-cohort recovery prediction,,Xiao holdout (full),"0.652 [0.500, 0.797]",20,"[0.500, 0.797]",results_c4_master_summary.csv holdout,Holdout replicates within-cohort CV
+② Whole-cohort recovery prediction,,Xiao→Mollin cross-platform (full),"0.521 [0.339, 0.702]",20,"[0.339, 0.702]",results_c14_external_ci.csv A2,Cross-platform external validation; CI contains 0.5
+② Whole-cohort recovery prediction,,Xiao→Gustin cross-platform (full),"0.556 [0.341, 0.757]",20,"[0.341, 0.757]",results_c14_external_ci.csv A3,Second cross-platform external validation; CI contains 0.5
+③ Baseline CST-IV subgroup,"Among CST-IV patients, who will recover?",Xiao within-cohort CV (CST-IV),0.535 ± 0.127,54,"[0.388, 0.802]",results_c4_master_summary.csv B1,Within-cohort near random
+③ Baseline CST-IV subgroup,,Xiao→Mollin cross-platform (CST-IV),"0.501 [0.299, 0.714]",20,"[0.299, 0.714]",results_c14_external_ci.csv B2,CST-IV cross-platform CI centers near 0.5
+③ Baseline CST-IV subgroup,,Xiao→Gustin cross-platform (CST-IV),"0.512 [0.296, 0.729]",20,"[0.296, 0.729]",results_c14_external_ci.csv B3,Second CST-IV cross-platform; CI centers near 0.5
+③ Baseline CST-IV subgroup,,Gustin within-cohort (all CST-IV),0.437 ± 0.172,33,"[0.092, 0.781]",results_c4_master_summary.csv A4,Third independent cohort; near random

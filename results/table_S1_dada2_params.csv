@@ -1,0 +1,5 @@
+﻿Cohort (BioProject),Sequencing platform,Amplicon region,Library layout,DADA2 truncLen,maxEE,Quality profile,ASVs retained,Notes
+Xiao 2016 (PRJNA302078),454 GS Junior,V1-V3,Single-end,450,2,PRJNA302078_quality_py.png,4688,454 single-end; no merging required. Primers 27F/534R.
+"Plummer 2023, SToPBV (PRJNA592384)",Illumina MiSeq (2×300),V3-V4,Paired-end,240 / 220,2 / 2,PRJNA592384_quality_py.png,—,"SToPBV trial 16S data (Vodstrcil 2019); re-analysed by Plummer 2023 and used as this study's Plummer cohort. ~33-bp overlap, merge rate 99.9%."
+Gustin 2022 (PRJNA691964),Illumina MiSeq (2×150),V4,Paired-end,no truncation (0 / 0),2 / 2,PRJNA691964_quality_py.png,—,"Complete D0→D7→D30 trajectory. Reads 145–150 bp; truncLen=150 would discard short reads, so truncLen=0 (no truncation) was used."
+"Plummer 2018, StepUp-1 (PRJNA398590) — exploratory",Illumina MiSeq (2×300),V3-V4,Single-end R1 (raw: paired),280 (R1 only),2,PRJNA398590_quality_py.png,—,"StepUp-1 pilot cohort (Plummer 2018 PLoS One, e0190199). Exploratory only — NOT included in the final analysis (StepUp follow-up label unavailable). R2 quality too poor to merge → processed as single-end R1."
