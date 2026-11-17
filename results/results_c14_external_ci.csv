@@ -1,5 +1,5 @@
-path,n_test,seedmean_auc,seedmean_sd,seedmean_ci_lo,seedmean_ci_hi,meanprob_auc,meanprob_ci_lo,meanprob_ci_hi
-A2 Xiao->Mollin full (报告 0.528±0.010),33,0.5206,0.0159,0.339,0.702,0.5222,0.312,0.731
-A3 Xiao->Gustin full (报告 0.556±0.021),33,0.5564,0.0211,0.341,0.757,0.5372,0.31,0.748
-B2 Xiao->Mollin CST4 (报告 0.505±0.020),30,0.5011,0.0263,0.299,0.714,0.4955,0.286,0.718
-B3 Xiao->Gustin CST4 (报告 0.512),33,0.5124,0.0,0.296,0.729,0.5124,0.296,0.73
+﻿path,n_test,seedmean_auc,seedmean_sd,seedmean_ci_lo,seedmean_ci_hi,meanprob_auc,meanprob_ci_lo,meanprob_ci_hi
+A2 Xiao -> Mollin external (whole cohort),33,0.5206,0.0159,0.339,0.702,0.5222,0.312,0.731
+A3 Xiao -> Gustin external (whole cohort),33,0.5564,0.0211,0.341,0.757,0.5372,0.31,0.748
+B2 Xiao -> Mollin external (baseline CST IV),30,0.5011,0.0263,0.299,0.714,0.4955,0.286,0.718
+B3 Xiao -> Gustin external (baseline CST IV),33,0.5124,0.0,0.296,0.729,0.5124,0.296,0.73

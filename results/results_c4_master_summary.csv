@@ -1,20 +1,20 @@
-﻿section,analysis,auc_mean,auc_sd,n,note
-四队列矩阵,A1 Xiao 队列内CV(全),0.6256,0.1633,68,锚点0.65
-四队列矩阵,A2 Xiao→Mollin(全),0.5278,0.0101,20,锚点0.609
-四队列矩阵,A3 Xiao→Gustin(全),0.5564,0.0206,20,第3验证
-四队列矩阵,A4 Gustin 队列内CV(全),0.4355,0.1716,33,全CST4
-四队列矩阵,B1 Xiao CST4 队列内,0.5353,0.1267,54,锚点0.596
-四队列矩阵,B2 Xiao→Mollin CST4,0.5049,0.0204,20,锚点0.527
-四队列矩阵,B3 Xiao→Gustin CST4,0.5124,0.0,20,第3复现
-四队列矩阵,B4 Gustin CST4,0.437,0.1718,33,=A4
-四队列矩阵,C1 Gustin α-only,0.6885,0.201,33,richness信号
-richness,Xiao · 全人群 ρ_raw,-0.054,,68,p=0.662
-richness,Xiao · 全人群 ρ_rarefy,-0.033,,68,p=0.787 depth=4254
-richness,Xiao · 基线CST4 ρ_raw,0.045,,54,p=0.745
-richness,Xiao · 基线CST4 ρ_rarefy,0.109,,54,p=0.431 depth=4254
-richness,Plummer · 全人群 ρ_raw,0.1,,49,p=0.492
-richness,Plummer · 全人群 ρ_rarefy,0.095,,49,p=0.515 depth=1341
-richness,Plummer · 基线CST4 ρ_raw,0.071,,43,p=0.65
-richness,Plummer · 基线CST4 ρ_rarefy,0.09,,43,p=0.565 depth=1341
-richness,Gustin · 全CST4 ρ_raw,-0.454,,33,p=0.008
-richness,Gustin · 全CST4 ρ_rarefy,-0.3916,,33,p=0.024 depth=1014
+﻿section,analysis,auc_mean,auc_sd,n_test,n_seeds,note
+four_cohort_matrix,A1 Xiao within-cohort CV (whole cohort),0.6256,0.1633,68,20,LASSO-LR; 20x5 repeated CV; fold-level mean +/- SD
+four_cohort_matrix,A2 Xiao -> Mollin transfer (whole cohort),0.5278,0.0101,33,20,"external transfer, 20 seeds"
+four_cohort_matrix,A3 Xiao -> Gustin transfer (whole cohort),0.5564,0.0206,33,20,"external transfer, 20 seeds"
+four_cohort_matrix,A4 Gustin within-cohort CV (whole cohort),0.4355,0.1716,33,20,all samples are CST IV
+four_cohort_matrix,B1 Xiao within-cohort CV (baseline CST IV),0.5353,0.1267,54,20,baseline CST IV subgroup
+four_cohort_matrix,B2 Xiao -> Mollin transfer (baseline CST IV),0.5049,0.0204,30,20,baseline CST IV subgroup
+four_cohort_matrix,B3 Xiao -> Gustin transfer (baseline CST IV),0.5124,0.0,33,20,baseline CST IV subgroup
+four_cohort_matrix,B4 Gustin within-cohort CV (baseline CST IV),0.437,0.1718,33,20,identical to A4 (Gustin is entirely CST IV)
+four_cohort_matrix,C1 Gustin alpha-diversity-only model,0.6885,0.201,33,20,alpha diversity only (richness family)
+richness,"Xiao whole cohort, Spearman rho (raw)",-0.054,,68,,p = 0.662
+richness,"Xiao whole cohort, Spearman rho (rarefied)",-0.033,,68,,p = 0.787; depth = 4254
+richness,"Xiao baseline CST IV, Spearman rho (raw)",0.045,,54,,p = 0.745
+richness,"Xiao baseline CST IV, Spearman rho (rarefied)",0.109,,54,,p = 0.431; depth = 4254
+richness,"Plummer whole cohort, Spearman rho (raw)",0.1,,49,,p = 0.492
+richness,"Plummer whole cohort, Spearman rho (rarefied)",0.095,,49,,p = 0.515; depth = 1341
+richness,"Plummer baseline CST IV, Spearman rho (raw)",0.071,,43,,p = 0.650
+richness,"Plummer baseline CST IV, Spearman rho (rarefied)",0.09,,43,,p = 0.565; depth = 1341
+richness,"Gustin whole cohort, Spearman rho (raw)",-0.454,,33,,p = 0.008
+richness,"Gustin whole cohort, Spearman rho (rarefied)",-0.3916,,33,,p = 0.024; depth = 1014
