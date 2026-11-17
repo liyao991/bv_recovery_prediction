@@ -5,7 +5,9 @@ alpha_family.py —— α 多样性家族对照（家族 × 分辨率矩阵）
 队列：Xiao(68) · Plummer(49) · Gustin(33 v1->v3)，均为配对结局（D30 LB>=50% 康复）
 α 家族：
   richness : observed, chao1
-  evenness : pielou, simpson_even(=invsimpson/observed)
+  evenness : pielou
+  full 专属 : simpson_even = invsimpson/observed（Simpson 均匀度 (1/D)/S，**非 Pielou**；
+              仅计入 full 家族，不进入 evenness 家族——否则与 Table S6 口径不符）
   entropy  : shannon, simpson(1-D), invsimpson
   full     : 全部 7 指标
 分辨率：asv / genus / species（三级聚合分别计算 α）
@@ -67,7 +69,13 @@ for pat, sub in G_map.groupby('patient'):
         g_pairs.append((v1.iloc[0]['run'], v3.iloc[0]['run']))
 g_base, g_out = zip(*g_pairs)
 G_out = G_rel.loc[list(g_out)]
-g_outcome = (G_out['Lactobacillus'] > np.log1p(0.5)).values.astype(int)
+# Outcome definition (Gustin / PRJNA691964): a woman counts as microbiologically
+# recovered when Lactobacillus accounts for >= 50% of the follow-up (visit 3)
+# community, the same >= 50% rule applied to the two other cohorts.
+# NOTE ON SCALE: PRJNA691964_genus_rel.csv stores relative abundances as linear
+# fractions (0-1), not as log1p values, so the threshold is applied to the raw
+# fraction (0.50) rather than to np.log1p(0.50) = 0.4055.
+g_outcome = (G_out['Lactobacillus'] >= 0.50).values.astype(int)
 pairs['Gustin'] = dict(base=list(g_base), y=g_outcome,
                        cst4=np.ones(len(g_outcome), dtype=bool), n=len(g_outcome))
 print(f'Gustin: {len(g_pairs)} 对, 康复率 {g_outcome.mean():.3f} (基线全 CST4)')
@@ -122,7 +130,10 @@ for co_tag in ['Gustin', 'Xiao', 'Plummer']:
     a = d.loc[base_idx].copy()
     yv = P['y']
     # 深度列（测序深度混杂参考，见报告说明）
-    a['total_reads'] = 0  # 占位（α 导出未含深度，见报告说明）
+    # 测序深度不在本矩阵的预测变量内：α 导出表未含深度，total_reads 仅为占位且后续从未使用。
+    # 深度对 richness-结局关联的影响是在**独立的稳健性检查**中评估的（rarefaction、
+    # 偏相关、多变量校正 log 深度），不在本脚本的任何模型中。
+    a['total_reads'] = 0  # placeholder only; never passed to a model in this script
 
     print(f'\n===== {co_tag} α 家族 × 分辨率（全人群 n={len(yv)}）=====')
     for lv in LEVELS:
