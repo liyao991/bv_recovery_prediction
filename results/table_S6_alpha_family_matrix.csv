@@ -1,13 +1,13 @@
 ﻿resolution,family,features,auc_mean,auc_sd,n,note
-asv,richness,asv_observed + asv_chao1,0.727,0.210,33,Gustin主口径：LB>=0.5
-asv,evenness,asv_pielou,0.402,0.159,33,Gustin主口径：LB>=0.5
-asv,entropy,asv_shannon + asv_simpson + asv_invsimpson,0.608,0.223,33,Gustin主口径：LB>=0.5
-asv,full,asv_* 全部6指标,0.691,0.211,33,Gustin主口径：LB>=0.5
-genus,richness,genus_observed + genus_chao1,0.681,0.219,33,Gustin主口径：LB>=0.5
-genus,evenness,genus_pielou,0.468,0.185,33,Gustin主口径：LB>=0.5
-genus,entropy,genus_shannon + genus_simpson + genus_invsimpson,0.577,0.243,33,Gustin主口径：LB>=0.5
-genus,full,genus_* 全部6指标,0.660,0.225,33,Gustin主口径：LB>=0.5
-species,richness,species_observed + species_chao1,0.776,0.164,33,Gustin主口径：LB>=0.5
-species,evenness,species_pielou,0.347,0.180,33,Gustin主口径：LB>=0.5
-species,entropy,species_shannon + species_simpson + species_invsimpson,0.504,0.231,33,Gustin主口径：LB>=0.5
-species,full,species_* 全部6指标,0.747,0.184,33,Gustin主口径：LB>=0.5
+asv,richness,asv_observed + asv_chao1,0.727,0.210,33,Gustin primary definition: LB >= 0.5
+asv,evenness,asv_pielou,0.402,0.159,33,Gustin primary definition: LB >= 0.5
+asv,entropy,asv_shannon + asv_simpson + asv_invsimpson,0.608,0.223,33,Gustin primary definition: LB >= 0.5
+asv,full,asv_* all six metrics,0.691,0.211,33,Gustin primary definition: LB >= 0.5
+genus,richness,genus_observed + genus_chao1,0.681,0.219,33,Gustin primary definition: LB >= 0.5
+genus,evenness,genus_pielou,0.468,0.185,33,Gustin primary definition: LB >= 0.5
+genus,entropy,genus_shannon + genus_simpson + genus_invsimpson,0.577,0.243,33,Gustin primary definition: LB >= 0.5
+genus,full,genus_* all six metrics,0.660,0.225,33,Gustin primary definition: LB >= 0.5
+species,richness,species_observed + species_chao1,0.776,0.164,33,Gustin primary definition: LB >= 0.5
+species,evenness,species_pielou,0.347,0.180,33,Gustin primary definition: LB >= 0.5
+species,entropy,species_shannon + species_simpson + species_invsimpson,0.504,0.231,33,Gustin primary definition: LB >= 0.5
+species,full,species_* all six metrics,0.747,0.184,33,Gustin primary definition: LB >= 0.5
