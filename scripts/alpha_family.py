@@ -129,7 +129,6 @@ for co_tag in ['Gustin', 'Xiao', 'Plummer']:
         print(f'!! {co_tag}: {len(P["base"]) - len(base_idx)} 个 base 样本无 α 数据')
     a = d.loc[base_idx].copy()
     yv = P['y']
-    # 深度列（测序深度混杂参考，见报告说明）
     # 测序深度不在本矩阵的预测变量内：α 导出表未含深度，total_reads 仅为占位且后续从未使用。
     # 深度对 richness-结局关联的影响是在**独立的稳健性检查**中评估的（rarefaction、
     # 偏相关、多变量校正 log 深度），不在本脚本的任何模型中。
