@@ -34,7 +34,7 @@ submitted, DOCX (typeset).
 | Figure 5 (nine taxa × three cohorts, outcome correlation heat map) | `results/fig_c18_outcome_heatmap.png` |
 | D7 dynamics and transient-clearance statistics (Table S5) | `results/table_S5_d7_dynamic.csv`, `results/fig_S5_d7_dynamic.png` |
 | PPV for recovery at D30 among D7-responders (0.350, 7/20) | `results/table_S5_d7_dynamic.csv` |
-| Targeted prediction of key clinical taxa (Table S7) | `results/附表S7_临床关键菌靶向预测_数字表.md` |
+| Targeted prediction of key clinical taxa (Table S7) | `results/results_c18_univariate.csv`, `results/results_c18_combo.csv` |
 | Cross-cohort pooled ρ (metafor) | `results/c6_metafor_pooled.csv`, `results/fig_c6_meta_forest.png` |
 | Minimum detectable AUC (MDE) | `results/results_mde_power.csv` (produced by `scripts/mde_power_analysis.py`) |
 
@@ -74,9 +74,9 @@ as such here.
 | Table S3 | `results/table_S3_feature_list.{csv,docx}` |
 | Table S4 | `results/table_S4_resolution_annotation.{csv,docx}` |
 | Table S5 | `results/table_S5_d7_dynamic.{csv,docx}` |
-| Table S6 | `results/table_S6_alpha_family_matrix.{csv,md}` |
-| Table S7 | `results/附表S7_临床关键菌靶向预测_数字表.md` |
-| Tables S8–S9 | `results/线B论文_补充材料附表S8-S9_2026-09-03.{docx,html,md}` |
+| Table S6 | `results/table_S6_alpha_family_matrix.csv` |
+| Table S7 | `results/results_c18_univariate.csv`, `results/results_c18_combo.csv` (formatted table in Supplementary Material) |
+| Tables S8–S9 | `results/results_c20_model_family.csv`, `results/results_c20_clr.csv`, `results/results_c20_clr_pseudo.csv`, `results/results_c20_feat_freq.csv` (formatted tables in Supplementary Material) |
 
 ### 2.2 Figures S1–S5
 
