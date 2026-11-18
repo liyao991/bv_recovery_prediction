@@ -1,7 +1,0 @@
-item,value,extra
-"rho(richness, outcome)",-0.454 (p=0.0080),应复现主分析 -0.454
-"rho(baseLB, outcome)",0.230 (p=0.1988),基线 LB 单特征（Gustin CST4 内）
-"rho(richness, baseLB)",-0.178 (p=0.3226),两者耦合强度
-"partial rho(richness, outcome | baseLB)",-0.431 (p=0.0138),控制基线 LB 后
-logistic 双变量 coef,richness=-1.181,baseLB=0.407
-MWU richness 康复 vs 未康复,U=54 p=0.0109,
